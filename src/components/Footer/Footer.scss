@@ -1,0 +1,14 @@
+.Footer {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    background-color: gray;
+    color: white;
+
+    ul {
+
+        list-style: none;
+    }
+}
