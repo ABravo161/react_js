@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import "./ItemCount.scss";
 import {useCounter} from "../../hooks/useCounter"
 

@@ -1,30 +1,26 @@
 import React, { useEffect, useState } from "react"
 import { pedirDatos } from "../../helpers/pedirDatos"
+import { ItemList } from "../ItemList/ItemList"
 
 
-export const ItemListContainer = ({greeting}) => {
+export const ItemListContainer = () => {
     
     const [items, setItems] = useState([])
-
-    console.log(items)
 
     useEffect(()=>{
 
         pedirDatos()
-        .then((resp) => {
-            setItems( resp )
+        .then((respuesta) => {
+            setItems( respuesta )
         })
-        .catch( (err) => {
-            console.log(err)
-        })
-        .finally(() => {
-            console.log("peticion finalizada")
+        .catch( (error) => {
+            console.log(error)
         })
     },[])
 
     return (
-        <div>
-            <h2>{greeting}</h2>
+        <div className="ItemListContainer">
+            <ItemList elementos={items} />
         </div>
     )
 }
