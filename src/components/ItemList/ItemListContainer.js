@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { pedirDatos } from "../../helpers/pedirDatos"
-import { ItemList } from "../ItemList/ItemList"
+import { ItemList } from "./ItemList"
 
 
 export const ItemListContainer = () => {
@@ -20,7 +20,9 @@ export const ItemListContainer = () => {
 
     return (
         <div className="ItemListContainer">
+            <h1>Item List Container</h1>
             <ItemList elementos={items} />
+            <hr/>
         </div>
     )
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Item } from '../Item/Item'
+import { Item } from './Item'
 
 export const ItemList = ({elementos}) => {
     return (
@@ -8,7 +8,7 @@ export const ItemList = ({elementos}) => {
         <hr/>
             {
                 elementos.map((elemento) => (
-                    <Item item={elemento}/>
+                    <Item key={elemento.id} item={elemento}/>
                 ))
             }
         </div>
