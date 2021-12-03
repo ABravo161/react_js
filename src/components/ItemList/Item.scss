@@ -1,0 +1,11 @@
+.Item {
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    justify-items: center;
+    align-items: center;
+    img {
+        max-width: 250px;
+        max-height: 250px;
+    }
+}

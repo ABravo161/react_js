@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { pedirItem } from "../../helpers/pedirDatos"
 import { ItemDetail } from "./ItemDetail"
-
+import "./ItemDetailContainer.scss"
 
 
 export const ItemDetailContainer = () => {

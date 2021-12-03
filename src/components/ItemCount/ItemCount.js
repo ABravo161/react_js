@@ -11,7 +11,7 @@ export const ItemCount = ({stock =10, initial =0 }) => {
 
     return (
         <div className="ItemCount">
-        <p>Nuevo Item</p>
+        <p>Cantidad</p>
         
         <Button variant="outlined" onClick={decrement}>-</Button>
         <span>{counter}</span>
