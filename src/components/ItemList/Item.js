@@ -13,7 +13,7 @@ export const Item = ({item})=> {
         <p>Precio: ${item.price}</p>
         <p>{item.description}</p>
         <p>Categoria: {item.category}</p>
-        <Button variant="outlined">{<Link to={`/detail/${item.id}`} >Ver Mas</Link>}</Button>
+        <Button variant="contained"><Link to={`/detail/${item.id}`}>Ver Mas</Link></Button>
         
         
     </div>

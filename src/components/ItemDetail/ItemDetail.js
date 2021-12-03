@@ -1,13 +1,17 @@
 import { Button } from "@material-ui/core"
-import React from "react"
+import React, { useContext } from "react"
 import { useNavigate } from "react-router"
 import { ItemCount } from "../ItemCount/ItemCount"
 import { useCounter } from "../../hooks/useCounter"
 import "./ItemDetail.scss"
+import { CartContext } from "../context/CartContext"
+import { Link } from "react-router-dom"
 
 
 
 export const ItemDetail = ({item})=> {
+
+    const {agregarAlCarrito, isInCart} = useContext(CartContext)
 
     const {counter, increment, decrement} = useCounter(1, item.stock, 1)
 
@@ -18,12 +22,13 @@ export const ItemDetail = ({item})=> {
     }
 
     const handleAgregar = () => {
-        console.log("item agregado", {
-            id: item.id,
-            precio: item.price,
-            nombre: item.title,
-            contidad: counter
+        agregarAlCarrito( {
+            "id": item.id,
+            "precio": item.price,
+            "nombre": item.title,
+            "cantidad": counter
         })
+
     }
 
     return (
@@ -33,7 +38,11 @@ export const ItemDetail = ({item})=> {
             <p>Precio: ${item.price}</p>
             <p>{item.description}</p>
 
-            <ItemCount increment={increment} decrement={decrement} onAdd={handleAgregar} counter={counter}/>
+            {
+                !isInCart(item.id)
+                ? <ItemCount increment={increment} decrement={decrement} onAdd={handleAgregar} counter={counter}/>
+                : <Link to="/cart"><Button variant="contained">TERMINAR COMPRA</Button></Link>
+            }
 
             <Button variant="contained" onClick={handleVolver}>Volver</Button>
         </div>

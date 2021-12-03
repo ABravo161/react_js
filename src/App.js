@@ -5,25 +5,31 @@ import { CartView } from "./components/CartView/CartView"
 import "./App.scss"
 import { ItemDetailContainer } from "./components/ItemDetail/ItemDetailContainer";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
+import { CartProvider } from "./components/context/CartContext";
 
 
 function App() {
-  return (
-    <BrowserRouter>
-      
-      <NavBar />
-      
-      <Routes>
-        <Route path="/" element={<ItemListContainer />} />
-        <Route path="/category/:categoryId" element={<ItemListContainer />} />
-        <Route path="/detail/:itemId" element={<ItemDetailContainer />} />
-        <Route path="/cart" element={<CartView />} />
-        <Route path="*" element={ <Navigate to="/" />} />
-      </Routes>
-      
-      <Footer />
 
-    </BrowserRouter>
+  
+
+  return (
+    <CartProvider>
+      <BrowserRouter>
+        
+        <NavBar />
+        
+        <Routes>
+          <Route path="/" element={<ItemListContainer />} />
+          <Route path="/category/:categoryId" element={<ItemListContainer />} />
+          <Route path="/detail/:itemId" element={<ItemDetailContainer />} />
+          <Route path="/cart" element={<CartView />} />
+          <Route path="*" element={ <Navigate to="/" />} />
+        </Routes>
+        
+        <Footer />
+
+      </BrowserRouter>
+    </CartProvider>
   );
 }
 
