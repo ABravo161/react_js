@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { useParams } from "react-router"
 import { pedirDatos } from "../../helpers/pedirDatos"
 import { ItemList } from "./ItemList"
 import "./ItemListContainer.scss"
@@ -8,21 +9,25 @@ export const ItemListContainer = () => {
     
     const [items, setItems] = useState([])
 
+    const {categoryId} = useParams()
+
+
     useEffect(()=>{
 
         pedirDatos()
         .then((respuesta) => {
-            setItems( respuesta )
+            if (categoryId){
+                setItems( respuesta.filter( (elemento) => elemento.category == categoryId) )
+            }
+            else {
+                setItems( respuesta )
+            }
         })
-        .catch( (error) => {
-            console.log(error)
-        })
-    },[])
+    },[categoryId])
 
     return (
         <div className="ItemListContainer">
-            <h1>Item List Container</h1>
-            <h2>Productos</h2>
+            <h1>Productos</h1>
             <hr/>
             <ItemList elementos={items} />
             <hr/>

@@ -1,9 +1,11 @@
 .Item {
     display: flex;
     flex-direction: column;
-    max-width: 50%;
+    max-width: 20%;
+    max-height: 25%;
     justify-items: center;
     align-items: center;
+    margin: 10px;
     img {
         max-width: 250px;
         max-height: 250px;

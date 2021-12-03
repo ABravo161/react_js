@@ -1,7 +1,14 @@
 .ItemListContainer {
     display: flex;
     flex-direction: column;
+    width: auto;
+    text-align: center;
     hr{
         width: 100%;
     }
+    h1 {
+        justify-items: center; 
+        justify-content: center;
+    }
+
 }

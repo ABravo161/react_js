@@ -7,9 +7,10 @@ export const pedirDatos = () => {
     })
 }
 
-export const pedirItem = () => {
+export const pedirItem = (id) => {
     return new Promise( (resolve, reject) => {
         setTimeout(() => { 
-            resolve(stock[1])} ,300)
+            resolve(stock.find(elemento => elemento.id === id))
+        } ,300)
     }) 
 }

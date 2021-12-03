@@ -1,19 +1,18 @@
 .navbar{
     display: flex;
-    background-color: blue;
+    background-color: black;
     color: white;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     padding: 20px;
 
     ul {
-
         list-style: none;
         display: flex;
         flex-direction: row;
-
+        
         li {
-            margin: 5px;
+            margin: 10px;
         }
     }
 }
