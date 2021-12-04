@@ -1,20 +1,17 @@
 import "./ItemCount.scss";
 import {useCounter} from "../../hooks/useCounter"
 
-import Button from '@material-ui/core/Button';
-
-
 export const ItemCount = ({increment, decrement, onAdd, counter}) => {
 
     return (
         <div className="ItemCount">
             <p>Cantidad</p>
 
-            <Button variant="outlined" onClick={decrement}>-</Button>
+            <button className="btn btn-outline-secondary m-2" onClick={decrement}>-</button>
             <span>{counter}</span>
-            <Button variant="outlined" onClick={increment}>+</Button>
+            <button className="btn btn-outline-primary m-2" onClick={increment}>+</button>
             <div>
-                <Button variant="contained" onClick={onAdd} counter={counter}>Agregar</Button>
+                <button className="btn btn-success m-2" onClick={onAdd} counter={counter}>Agregar</button>
             </div>
         </div>
     );

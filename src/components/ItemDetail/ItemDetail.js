@@ -41,9 +41,8 @@ export const ItemDetail = ({item})=> {
             {
                 !isInCart(item.id)
                 ? <ItemCount increment={increment} decrement={decrement} onAdd={handleAgregar} counter={counter}/>
-                : <Link to="/cart"><Button variant="contained">TERMINAR COMPRA</Button></Link>
+                : <Link to="/cart" className="btn btn-success m-2">TERMINAR COMPRA</Link>
             }
-
-            <Button variant="contained" onClick={handleVolver}>Volver</Button>
+            <button className="btn btn-secondary m-2" onClick={handleVolver}>VOLVER</button>
         </div>
     )}

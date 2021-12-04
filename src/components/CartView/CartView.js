@@ -1,4 +1,3 @@
-import { Button } from '@material-ui/core'
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { CartContext } from '../context/CartContext'
@@ -14,15 +13,15 @@ export const CartView = () => {
             {
                 cart.map( (elemento) => (
                 <div key={elemento.id}>
-                    <h2>{elemento.nombre}</h2>
+                    <h4>{elemento.nombre}</h4>
                     <p>Precio: ${elemento.precio}</p>
                     <p>Cantidad: {elemento.cantidad}</p>
                 </div>
             ))
             }
             <h2>Total: ${totalPrecio()}</h2>
-            <Button variant="outlined" onClick={vaciarCarrito}>VACIAR CARRITO</Button>
-            <Button variant="outlined"><Link to="/checkout">Terminar mi compra</Link></Button>
+            <button className="btn btn-danger m-2" onClick={vaciarCarrito}>VACIAR CARRITO</button>
+            <Link to="/checkout" className="btn btn-success m-2">Terminar mi compra</Link>
         </div>
     )
 }
