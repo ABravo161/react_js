@@ -1,5 +1,4 @@
 import "./ItemCount.scss";
-import {useCounter} from "../../hooks/useCounter"
 
 export const ItemCount = ({increment, decrement, onAdd, counter}) => {
 

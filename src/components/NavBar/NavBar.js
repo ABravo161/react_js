@@ -9,8 +9,8 @@ export const NavBar = () => {
         <Link to="/"><h1> App E-commerce ReactJS - Andrés Bravo </h1></Link>
         
         <ul>
-            <li><Link to="/category/ropa">ropa</Link></li>
-            <li><Link to="/category/accesorios">accesorios</Link></li>
+            <li><Link to="/categoria/ropa">ropa</Link></li>
+            <li><Link to="/categoria/accesorios">accesorios</Link></li>
         </ul>
 
         <Link to="/cart"><CartWidget/></Link>

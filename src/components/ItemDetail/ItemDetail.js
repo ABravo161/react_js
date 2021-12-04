@@ -24,8 +24,8 @@ export const ItemDetail = ({item})=> {
     const handleAgregar = () => {
         agregarAlCarrito( {
             "id": item.id,
-            "precio": item.price,
-            "nombre": item.title,
+            "precio": item.precio,
+            "nombre": item.nombre,
             "cantidad": counter
         })
 
@@ -33,10 +33,10 @@ export const ItemDetail = ({item})=> {
 
     return (
         <div className="ItemDetail">
-            <img src={item.image} alt={item.title}/>
-            <h3>{item.title}</h3>
-            <p>Precio: ${item.price}</p>
-            <p>{item.description}</p>
+            <img src={item.imagen} alt={item.nombre}/>
+            <h3>{item.nombre}</h3>
+            <p>Precio: ${item.precio}</p>
+            <p>{item.descripcion}</p>
 
             {
                 !isInCart(item.id)

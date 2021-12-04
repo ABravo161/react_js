@@ -8,11 +8,11 @@ export const Item = ({item})=> {
     return (
     <div className="Item">
         
-        <img src={item.image} alt={item.title}/>
-        <h3>{item.title}</h3>
-        <p>Precio: ${item.price}</p>
-        <p>{item.description}</p>
-        <p>Categoria: {item.category}</p>
+        <img src={item.imagen} alt={item.nombre}/>
+        <h3>{item.nombre}</h3>
+        <p>Precio: ${item.precio}</p>
+        <p>{item.descripcion}</p>
+        <p>Categoria: {item.categoria}</p>
         <Link to={`/detail/${item.id}`} className="btn btn-primary" >Ver Mas</Link>
         
         

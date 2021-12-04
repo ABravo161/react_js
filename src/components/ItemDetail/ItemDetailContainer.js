@@ -1,9 +1,11 @@
+import { collection, getDoc, doc } from "firebase/firestore/lite"
 import React, { useEffect, useState } from "react"
 import { useParams } from "react-router"
-import { pedirItem } from "../../helpers/pedirDatos"
+import { db } from "../../firbase/config"
 import { Loader } from "../Loader/Loader"
 import { ItemDetail } from "./ItemDetail"
 import "./ItemDetailContainer.scss"
+
 
 
 export const ItemDetailContainer = () => {
@@ -17,12 +19,21 @@ export const ItemDetailContainer = () => {
     useEffect(()=>{
         setLoading(true)
 
-        pedirItem( Number(itemId) )
-        .then((respuesta) => setItem( respuesta ))
-        .finally( () => {
-            setLoading(false)
-        })
-    },[])
+        const productosRef = collection(db, "productos")
+        const docRef = doc(productosRef, itemId)
+
+        getDoc(docRef)
+            .then((doc) => {
+                setItem( {
+                    id: doc.id,
+                    ...doc.data()
+                })
+            })
+            .finally(() => {
+                setLoading(false)
+            })
+
+    },[itemId])
 
     return (
         loading
