@@ -15,7 +15,7 @@ export const CartView = () => {
     const  {cart, totalPrecio, vaciarCarrito, borrarItem} = useContext(CartContext)
 
     return (
-        <div>
+        <div className="container m-4">
             <h2>Carrito</h2>
             {
                 cart.map( (elemento) => (

@@ -1,12 +1,12 @@
-import { collection, getDoc, doc } from "firebase/firestore/lite"
-import React, { useEffect, useState } from "react"
-import { useParams } from "react-router"
-import { db } from "../../firbase/config"
-import { Loader } from "../Loader/Loader"
-import { ItemDetail } from "./ItemDetail"
 import "./ItemDetailContainer.scss"
 
+import React, { useEffect, useState } from "react"
+import { collection, doc, getDoc } from "firebase/firestore/lite"
 
+import { ItemDetail } from "./ItemDetail"
+import { Loader } from "../Loader/Loader"
+import { db } from "../../firbase/config"
+import { useParams } from "react-router"
 
 export const ItemDetailContainer = () => {
     
@@ -41,7 +41,6 @@ export const ItemDetailContainer = () => {
                 <Loader />
             :
                 <div className="ItemDetailContainer">
-                    <h1>Item Detail Container</h1>
                     {item && <><ItemDetail item={item} /> </>}
                     <hr/>
                 </div>
