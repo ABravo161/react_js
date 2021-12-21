@@ -6,11 +6,11 @@ export const NavBar = () => {
 
     return (
     <header className="navbar">
-        <Link to="/"><h1> App E-commerce ReactJS - Andrés Bravo </h1></Link>
+        <Link className="link" to="/"><h1> Just Disks - Andrés Bravo </h1></Link>
         
         <ul>
-            <li><Link to="/categoria/ropa">ropa</Link></li>
-            <li><Link to="/categoria/accesorios">accesorios</Link></li>
+            <li><Link className="link category" to="/categoria/HDD">Discos Rigidos (HDD)</Link></li>
+            <li><Link className="link category" to="/categoria/SSD">Discos Solidos (SSD)</Link></li>
         </ul>
 
         <Link to="/cart"><CartWidget/></Link>

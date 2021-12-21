@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
-
 import { CartContext } from '../context/CartContext'
 import { Link } from 'react-router-dom'
 import { useNavigate } from "react-router"
+import './CartView.scss'
 
 export const CartView = () => {
 
@@ -15,15 +15,22 @@ export const CartView = () => {
     const  {cart, totalPrecio, vaciarCarrito, borrarItem} = useContext(CartContext)
 
     return (
-        <div className="container m-4">
-            <h2>Carrito</h2>
+        <div className="cartView">
+            <h1>Carrito</h1>
+
             {
                 cart.map( (elemento) => (
-                <div key={elemento.id}>
-                    <h4>{elemento.nombre}</h4>
-                    <p>Precio: ${elemento.precio}</p>
-                    <p>Cantidad: {elemento.cantidad}</p>
-                    <button className="btn btn-danger btn-sm" onClick={() => borrarItem(elemento.id)}>borrar</button>
+                <div className="ItemContainer"key={elemento.id}>
+                    <div className="ItemContainerImg">
+                      <img src={elemento.imagen} alt={elemento.nombre}/>
+                      <button className="btn btn-danger btn-sm" onClick={() => borrarItem(elemento.id)}>borrar</button>
+                    </div>
+                    <div className="ItemContainerDetails">
+                      <h5 >{elemento.nombre}</h5>
+                      <p >Precio: ${elemento.precio}</p>
+                      <p >Cantidad: {elemento.cantidad}</p>
+                      <p >sub-total: ${elemento.precio*elemento.cantidad}</p>
+                    </div>
                 </div>
             ))
             }

@@ -1,4 +1,4 @@
-import { Button } from "@material-ui/core"
+
 import React, { useContext } from "react"
 import { useNavigate } from "react-router"
 import { ItemCount } from "../ItemCount/ItemCount"
@@ -25,6 +25,7 @@ export const ItemDetail = ({item})=> {
         agregarAlCarrito( {
             "id": item.id,
             "precio": item.precio,
+            "imagen": item.imagen,
             "nombre": item.nombre,
             "cantidad": counter
         })
@@ -32,11 +33,11 @@ export const ItemDetail = ({item})=> {
     }
 
     return (
-        <div className="ItemDetail">
+        <div className="ItemDetail container">
             <img src={item.imagen} alt={item.nombre}/>
             <h3>{item.nombre}</h3>
-            <p>Precio: ${item.precio}</p>
-            <p>{item.descripcion}</p>
+            <h4>Precio: ${item.precio}</h4>
+            <>{item.descripcion}</>
 
             {
                 !isInCart(item.id)

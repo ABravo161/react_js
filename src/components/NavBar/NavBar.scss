@@ -1,18 +1,23 @@
 .navbar{
     display: flex;
     background-color: black;
-    color: white;
     align-items: center;
     justify-content: space-evenly;
-    padding: 20px;
-
+    padding: 30px;
     ul {
         list-style: none;
         display: flex;
         flex-direction: row;
-        
-        li {
-            margin: 10px;
-        }
+        text-decoration:none;
     }
+}
+
+.link {
+  text-decoration:none;
+  color: #FFF;
+}
+
+.category {
+  margin: 15px;
+  font-size: 18px;
 }

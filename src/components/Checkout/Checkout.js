@@ -49,6 +49,7 @@ export const Checkout = () => {
 
         const outOfStock = []
 
+
         getDocs(q)
             .then((respuesta)=> {
                 respuesta.docs.forEach((doc) => {
@@ -64,7 +65,7 @@ export const Checkout = () => {
                     }
                 })
 
-                if (outOfStock.length == 0) {
+                if (outOfStock.length === 0) {
                     batch.commit()
 
                     addDoc(ordersRef, order)

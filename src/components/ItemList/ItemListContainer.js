@@ -41,7 +41,7 @@ export const ItemListContainer = () => {
         ? <Loader/>
         :
         <div className="ItemListContainer">
-            <h1>Productos</h1>
+            <h1>Compra tu proximo disco</h1>
             <hr/>
             <ItemList elementos={items} />
             <hr/>

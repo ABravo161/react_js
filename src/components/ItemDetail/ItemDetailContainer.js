@@ -40,8 +40,8 @@ export const ItemDetailContainer = () => {
             ?
                 <Loader />
             :
-                <div className="ItemDetailContainer">
-                    {item && <><ItemDetail item={item} /> </>}
+                <div className="ItemDetailContainer container ">
+                    {item && <><ItemDetail className="col" item={item} /> </>}
                     <hr/>
                 </div>
     )

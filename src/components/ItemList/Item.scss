@@ -1,13 +1,13 @@
-.Item {
+.item {
     display: flex;
     flex-direction: column;
-    max-width: 20%;
-    max-height: 25%;
-    justify-items: center;
+
+    justify-content: space-around;
     align-items: center;
-    margin: 10px;
+    margin:25px;
+    width: 20%;
     img {
-        max-width: 250px;
+        width: 250px;
         max-height: 250px;
     }
 }
